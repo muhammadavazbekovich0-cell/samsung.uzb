@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAVARIA MOTORS 2026 | BMW-Inspired Automotive Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./STYLE.CSS" />
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader" class="loader">
+    <div class="loader-ring">
+      <div class="bmw-roundel">
+        <span class="q1"></span><span class="q2"></span>
+        <span class="q3"></span><span class="q4"></span>
+      </div>
+    </div>
+    <p class="loader-text">BAVARIA MOTORS 2026 SHOWCASE</p>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand" onclick="navigateTo('home')">
+        <div class="bmw-roundel small">
+          <span class="q1"></span><span class="q2"></span>
+          <span class="q3"></span><span class="q4"></span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">BAVARIA 2026</span>
+          <span class="brand-sub">INSPIRED SHOWCASE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#models" data-i18n="navModels" onclick="navigateTo('models')">Modellar (25)</a>
+        <a href="#electric" data-i18n="navElectric" onclick="navigateTo('models', 'Electric')">Elektr</a>
+        <a href="#configurator" data-i18n="navConfigure" onclick="navigateTo('configurator')">Konfigurator</a>
+        <a href="#finance" data-i18n="navFinance" onclick="navigateTo('finance')">Kredit</a>
+        <a href="#uzumbank" data-i18n="navUzum" onclick="navigateTo('uzumbank')">Uzum Bank</a>
+        <a href="#contact" data-i18n="navContact" onclick="navigateTo('contact')">Aloqa</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="uz" onclick="setLanguage('uz')">UZ</button>
+          <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">USA</button>
+          <button class="lang-btn" data-lang="ru" onclick="setLanguage('ru')">RU</button>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- 1. HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content reveal">
+        <div class="hero-badge" data-i18n="heroBadge">2026 MODEL YILI • BMW-ILHOMLANGAN SHOWROOM</div>
+        <h1 class="hero-title" data-i18n="heroTitle">THE ULTIMATE DRIVING MACHINE.</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">
+          2026-yilgi to'liq BMW model qatori: yangi G90 M5 Hybrid, G60 5 Series, LCI X5/X7 va i7 Flagman elektr sedanlari Toshkent bozori uchun aniq UZS hisob-kitoblarda.
+        </p>
+        <div class="hero-buttons">
+          <a href="#models" class="btn btn-primary" data-i18n="exploreModels" onclick="navigateTo('models')">2026 Modellarni ko'rish</a>
+          <a href="#configurator" class="btn btn-glass" data-i18n="discoverMore" onclick="navigateTo('configurator')">Konfiguratorni ochish</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">25</span>
+            <span class="stat-label" data-i18n="statModels">2026 Modellar</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">727 HP</span>
+            <span class="stat-label" data-i18n="statPower">M5 G90 Hybrid quvvati</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">625 km</span>
+            <span class="stat-label" data-i18n="statRange">i7 xDrive60 masofasi</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. MODELS CATALOG SECTION -->
+    <section id="models" class="section catalog-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-tag" data-i18n="catalogTag">2026 TO'LIQ MODEL QATORI</span>
+            <h2 class="section-title" data-i18n="catalogTitle">2026 BMW Avtomobillar Katalogi</h2>
+          </div>
+          <p class="demo-notice" data-i18n="demoPriceNote">
+            * Narxlar 2026-yilgi O'zbekiston bozori va rasmiy MSRP asosida UZS da shakllantirilgan (Ko'rgazma/Demo ma'lumotnoma).
+          </p>
+        </div>
+
+        <!-- Filters & Search -->
+        <div class="catalog-controls reveal">
+          <div class="filter-tabs" id="filterTabs">
+            <button class="filter-btn active" data-category="All" data-i18n="catAll">Barchasi (25)</button>
+            <button class="filter-btn" data-category="Sedan" data-i18n="catSedan">Sedan & Coupé</button>
+            <button class="filter-btn" data-category="SUV" data-i18n="catSuv">X-Series SAV</button>
+            <button class="filter-btn" data-category="M" data-i18n="catM">BMW M Performance</button>
+            <button class="filter-btn" data-category="Electric" data-i18n="catElectric">BMW i Electric</button>
+          </div>
+
+          <div class="search-sort">
+            <input type="text" id="modelSearch" class="input-field" placeholder="2026 Model qidirish (M5, X7, i7, Z4)..." />
+            <select id="modelSort" class="input-field">
+              <option value="default" data-i18n="sortDefault">Tartiblash: Standart</option>
+              <option value="price-asc" data-i18n="sortPriceAsc">Narx: Arzondan qimmatga</option>
+              <option value="price-desc" data-i18n="sortPriceDesc">Narx: Qimmatdan arzonga</option>
+              <option value="hp-desc" data-i18n="sortHp">Quvvat: Yuqori ot kuchi</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Models Grid -->
+        <div class="models-grid" id="modelsGrid"></div>
+      </div>
+    </section>
+
+    <!-- 3. ELECTRIC SPOTLIGHT SECTION -->
+    <section id="electric" class="section electric-section">
+      <div class="container">
+        <div class="electric-banner reveal">
+          <div class="electric-info">
+            <span class="electric-badge">2026 BMW i — 100% ELECTRIC LINEUP</span>
+            <h2 data-i18n="electricTitle">Kelajak harakati. Bugun Toshkentda.</h2>
+            <p data-i18n="electricDesc">
+              2026-yilgi BMW i4, i5 M60, iX xDrive50 va hashamatli i7 xDrive60 modellari bilan nol chiqindilar, 3.8 soniyada 100 km/soat tezlanish va 625 km gacha yurish masofasini his eting.
+            </p>
+            <button class="btn btn-primary" onclick="filterByElectric()" data-i18n="viewElectric">Elektr modellarni ko'rish</button>
+          </div>
+          <div class="electric-visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/BMW_i7_xDrive60_1X7A6834.jpg?width=1000" alt="2026 BMW i7 xDrive60" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. INTERACTIVE CONFIGURATOR -->
+    <section id="configurator" class="section configurator-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-tag">2026 BMW INDIVIDUAL</span>
+            <h2 class="section-title" data-i18n="configTitle">Interaktiv Avtomobil Konfiguratori</h2>
+          </div>
+        </div>
+
+        <div class="config-layout reveal">
+          <!-- Left Preview -->
+          <div class="config-preview glass-card">
+            <div class="config-image-wrapper">
+              <img id="configCarImg" src="" alt="Configured 2026 BMW" />
+              <div id="configColorOverlay" class="color-tint-overlay"></div>
+              <span class="config-model-badge" id="configBadge">2026 BMW X5</span>
+            </div>
+
+            <div class="config-specs-bar">
+              <div>
+                <span class="spec-lbl" data-i18n="specEngine">Dvigatel</span>
+                <strong id="cfgSpecEngine">3.0L TwinPower</strong>
+              </div>
+              <div>
+                <span class="spec-lbl" data-i18n="specPower">Quvvat</span>
+                <strong id="cfgSpecHp">375 HP</strong>
+              </div>
+              <div>
+                <span class="spec-lbl" data-i18n="specAccel">0-100 km/s</span>
+                <strong id="cfgSpecAccel">5.5 s</strong>
+              </div>
+              <div>
+                <span class="spec-lbl" data-i18n="specSpeed">Maks. tezlik</span>
+                <strong id="cfgSpecSpeed">250 km/s</strong>
+              </div>
+            </div>
+
+            <!-- Dynamic Price Breakdown -->
+            <div class="price-breakdown">
+              <div class="price-row">
+                <span data-i18n="basePrice">Boshlang'ich narx (2026):</span>
+                <span id="cfgBasePrice">0 UZS</span>
+              </div>
+              <div class="price-row">
+                <span data-i18n="optionsPrice">Qo'shimcha jihozlar:</span>
+                <span id="cfgOptionsPrice">+ 0 UZS</span>
+              </div>
+              <div class="price-row discount">
+                <span data-i18n="discountPrice">Ko'rgazma chegirmasi (3%):</span>
+                <span id="cfgDiscountPrice">- 0 UZS</span>
+              </div>
+              <div class="price-total">
+                <span data-i18n="finalPrice">Yakuniy Demo Narx:</span>
+                <strong id="cfgFinalPrice">0 UZS</strong>
+              </div>
+              <div class="config-cta-group">
+                <button class="btn btn-primary" onclick="openPurchaseFromConfig()" data-i18n="buyNow">Sotib olish / Buyurtma</button>
+                <button class="btn btn-outline" onclick="sendConfigToFinance()" data-i18n="calcFinance">Kreditni hisoblash</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Controls -->
+          <div class="config-controls glass-card">
+            <div class="control-group">
+              <label data-i18n="selectModel">1. 2026 Modelni tanlang</label>
+              <select id="cfgModelSelect" class="input-field"></select>
+            </div>
+
+            <div class="control-group">
+              <label data-i18n="selectTrim">2. Komplektatsiya (Trim)</label>
+              <div class="option-cards" id="cfgTrimOptions"></div>
+            </div>
+
+            <div class="control-group">
+              <label><span data-i18n="selectColor">3. Kuzov rangi:</span> <strong id="selectedColorName">Alpine White</strong></label>
+              <div class="color-swatches" id="cfgColorOptions"></div>
+            </div>
+
+            <div class="control-group">
+              <label data-i18n="selectWheels">4. Disklar dizayni</label>
+              <div class="option-cards" id="cfgWheelOptions"></div>
+            </div>
+
+            <div class="control-group">
+              <label data-i18n="selectInterior">5. Salon qoplamasi</label>
+              <div class="option-cards" id="cfgInteriorOptions"></div>
+            </div>
+
+            <div class="control-group">
+              <label data-i18n="selectPackages">6. Qo'shimcha paketlar</label>
+              <div class="checkbox-list" id="cfgPackagesList"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FINANCING & CREDIT CALCULATOR -->
+    <section id="finance" class="section finance-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-tag">BMW FINANCIAL SERVICES 2026</span>
+            <h2 class="section-title" data-i18n="financeTitle">Avtokredit va Bo'lib To'lash Kalkulyatori</h2>
+          </div>
+          <p class="demo-notice" data-i18n="financeDemoNote">
+            * Foiz stavkalari 2026 demo ko'rinishida keltirilgan va tasdiqlanmaguncha taxminiy hisoblanadi.
+          </p>
+        </div>
+
+        <div class="finance-grid reveal">
+          <div class="finance-inputs glass-card">
+            <div class="control-group">
+              <label data-i18n="finVehicle">2026 Avtomobilni tanlang</label>
+              <select id="finModelSelect" class="input-field"></select>
+            </div>
+
+            <div class="control-group">
+              <label><span data-i18n="finVehiclePrice">Avtomobil narxi (UZS):</span></label>
+              <input type="number" id="finPriceInput" class="input-field" step="1000000" />
+            </div>
+
+            <div class="control-group">
+              <div class="range-header">
+                <label data-i18n="finDownPayment">Boshlang'ich to'lov (<span id="finDownPctLabel">30</span>%)</label>
+                <strong id="finDownAmountLabel">0 UZS</strong>
+              </div>
+              <input type="range" id="finDownRange" min="10" max="80" step="5" value="30" class="slider" />
+            </div>
+
+            <div class="control-group">
+              <label data-i18n="finDuration">Kredit muddati (oy)</label>
+              <div class="term-buttons" id="finTermButtons">
+                <button type="button" class="term-btn" data-months="12">12</button>
+                <button type="button" class="term-btn" data-months="24">24</button>
+                <button type="button" class="term-btn active" data-months="36">36</button>
+                <button type="button" class="term-btn" data-months="48">48</button>
+                <button type="button" class="term-btn" data-months="60">60</button>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="range-header">
+                <label data-i18n="finRate">Yillik foiz stavkasi (Demo APR)</label>
+                <strong id="finRateLabel">18%</strong>
+              </div>
+              <input type="range" id="finRateRange" min="0" max="30" step="1" value="18" class="slider" />
+              <div class="rate-presets">
+                <button type="button" class="preset-chip" onclick="setFinancePreset(18)">Uzum Bank (18%)</button>
+                <button type="button" class="preset-chip" onclick="setFinancePreset(21)">Hamkor Bank (21%)</button>
+                <button type="button" class="preset-chip" onclick="setFinancePreset(0)">0% Muddatli to'lov</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="finance-results glass-card">
+            <div class="monthly-box">
+              <span data-i18n="monthlyPayment">Oylik to'lov</span>
+              <h3 id="resMonthly">0 UZS</h3>
+            </div>
+
+            <div class="finance-breakdown-list">
+              <div class="fb-item">
+                <span data-i18n="resInitial">Boshlang'ich to'lov:</span>
+                <strong id="resInitial">0 UZS</strong>
+              </div>
+              <div class="fb-item">
+                <span data-i18n="resLoan">Qolgan kredit summasi:</span>
+                <strong id="resLoan">0 UZS</strong>
+              </div>
+              <div class="fb-item">
+                <span data-i18n="resInterest">Jami foiz to'lovi:</span>
+                <strong id="resInterest">0 UZS</strong>
+              </div>
+              <div class="fb-item total">
+                <span data-i18n="resTotal">Umumiy to'lov summasi:</span>
+                <strong id="resTotal">0 UZS</strong>
+              </div>
+            </div>
+
+            <div class="payment-bar-wrap">
+              <div class="payment-bar">
+                <div id="barDown" class="bar-seg down" style="width:30%"></div>
+                <div id="barPrincipal" class="bar-seg principal" style="width:50%"></div>
+                <div id="barInterest" class="bar-seg interest" style="width:20%"></div>
+              </div>
+              <div class="bar-legend">
+                <span><i class="dot down"></i> <span data-i18n="legDown">Boshlang'ich</span></span>
+                <span><i class="dot principal"></i> <span data-i18n="legPrincipal">Asosiy qarz</span></span>
+                <span><i class="dot interest"></i> <span data-i18n="legInterest">Foiz</span></span>
+              </div>
+            </div>
+
+            <button class="btn btn-primary full-width" onclick="openPurchaseFromFinance()" data-i18n="applyFinancing">Kreditga ariza topshirish</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. UZUM BANK & PAYMENT OPTIONS -->
+    <section id="uzumbank" class="section uzum-section">
+      <div class="container">
+        <div class="uzum-card reveal">
+          <div class="uzum-left">
+            <div class="uzum-badge">
+              <span class="uzum-dot"></span> UZUM BANK & HAMKOR TO'LOV TIZIMLARI (2026 DEMO)
+            </div>
+            <h2 data-i18n="uzumTitle">Uzum Bank orqali tezkor avtokredit va to'lov</h2>
+            <p data-i18n="uzumDesc">
+              Pasport ma'lumotlari orqali 5 daqiqada onlayn skoringdan o'ting. Shuningdek, naqd to'lov, bank o'tkazmasi va 12–60 oylik bo'lib to'lash imkoniyatlari mavjud.
+            </p>
+
+            <div class="payment-methods-grid">
+              <div class="pm-box active">
+                <h4>Uzum Bank Auto</h4>
+                <p data-i18n="pmUzum">18% dan • 15% boshlang'ich to'lov</p>
+              </div>
+              <div class="pm-box">
+                <h4 data-i18n="pmBankTitle">Tijorat Banklari</h4>
+                <p data-i18n="pmBank">20%–23% • 60 oygacha</p>
+              </div>
+              <div class="pm-box">
+                <h4 data-i18n="pmInstallmentTitle">Bo'lib to'lash</h4>
+                <p data-i18n="pmInstallment">0% • 12 oy (50% oldindan)</p>
+              </div>
+              <div class="pm-box">
+                <h4 data-i18n="pmCashTitle">100% Naqd / O'tkazma</h4>
+                <p data-i18n="pmCash">3% maxsus chegirma</p>
+              </div>
+            </div>
+
+            <div class="uzum-actions">
+              <button class="btn btn-uzum" onclick="openUzumModal()" data-i18n="applyUzum">Uzum Bank orqali ariza berish</button>
+            </div>
+          </div>
+
+          <div class="uzum-right">
+            <div class="api-box">
+              <div class="api-header">
+                <span>UZUM BANK OPENAPI INTEGRATION POINT (DEMO)</span>
+                <span class="status-pill">SANDBOX 2026</span>
+              </div>
+              <pre><code>POST /api/v1/uzumbank/auto-loan/apply
+Host: sandbox-api.uzumbank.uz
+Content-Type: application/json
+
+{
+  "merchantId": "BAVARIA_SHOWCASE_2026",
+  "currency": "UZS",
+  "loanTermMonths": 36,
+  "demoMode": true
+}</code></pre>
+              <small data-i18n="uzumApiNote">
+                * Bu bo'lim rasmiy Uzum Bank API ulanishi uchun tayyorlangan demo interfeys hisoblanadi.
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="contact-grid reveal">
+          <div>
+            <span class="section-tag" data-i18n="contactTag">SHOWROOM & ALOQA</span>
+            <h2 class="section-title" data-i18n="contactTitle">Toshkent Avtosaloni bilan Bog'laning</h2>
+            <p class="contact-desc" data-i18n="contactDesc">
+              2026-yilgi modellarga test-drayvga yozilish, individual komplektatsiya yoki bank moliyalashtirish bo'yicha maslahat olish uchun ma'lumotlaringizni qoldiring.
+            </p>
+            <div class="contact-details">
+              <p><strong>📍 Manzil:</strong> Amir Temur shoh ko'chasi, Toshkent, O'zbekiston</p>
+              <p><strong>📞 Telefon:</strong> +998 (71) 200-00-00 (Demo)</p>
+              <p><strong>🕒 Ish vaqti:</strong> Dushanba – Yakshanba, 09:00 – 20:00</p>
+            </div>
+          </div>
+
+          <form id="contactForm" class="glass-card contact-form">
+            <div class="control-group">
+              <label data-i18n="fullName">To'liq ismingiz</label>
+              <input type="text" id="contactName" class="input-field" required placeholder="Alisher Valiyev" />
+            </div>
+            <div class="control-group">
+              <label data-i18n="phone">Telefon raqamingiz</label>
+              <input type="tel" id="contactPhone" class="input-field" required placeholder="+998 90 123 45 67" />
+            </div>
+            <div class="control-group">
+              <label data-i18n="message">Xabar yoki qiziqtirgan model</label>
+              <textarea id="contactMsg" class="input-field" rows="3" placeholder="2026 BMW X7 xDrive40i bo'yicha ma'lumot kerak..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width" data-i18n="sendMsg">Xabar yuborish</button>
+            <div id="contactSuccess" class="form-success hidden"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <div class="bmw-roundel small">
+            <span class="q1"></span><span class="q2"></span>
+            <span class="q3"></span><span class="q4"></span>
+          </div>
+          <span class="brand-title">BAVARIA 2026 SHOWCASE</span>
+        </div>
+        <p class="footer-disclaimer" data-i18n="footerDisclaimer">
+          Muhim eslatma: Ushbu veb-sayt BMW dizayn uslubidan ilhomlangan mustaqil ko'rgazma loyihasi bo'lib, BMW AG yoki rasmiy BMW dilerlik markazi emas. Barcha 2026 UZS narxlar va bank stavkalari ko'rgazma/demo maqsadida keltirilgan.
+        </p>
+      </div>
+      <div>
+        <h4 data-i18n="footerNav">Bo'limlar</h4>
+        <ul>
+          <li><a href="#models" data-i18n="navModels">Modellar (25)</a></li>
+          <li><a href="#configurator" data-i18n="navConfigure">Konfigurator</a></li>
+          <li><a href="#finance" data-i18n="navFinance">Kredit</a></li>
+          <li><a href="#uzumbank" data-i18n="navUzum">Uzum Bank</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footerLang">Tilni tanlash</h4>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="uz" onclick="setLanguage('uz')">O'zbekcha</button>
+          <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">English (USA)</button>
+          <button class="lang-btn" data-lang="ru" onclick="setLanguage('ru')">Русский</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Bavaria Automotive Showcase. Vehicle photographs sourced via Wikimedia Commons (CC BY-SA) & BMW model archives.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL 1: MODEL DETAILS -->
+  <div id="detailsModal" class="modal">
+    <div class="modal-backdrop" onclick="closeModal('detailsModal')"></div>
+    <div class="modal-content glass-card">
+      <button class="modal-close" onclick="closeModal('detailsModal')">&times;</button>
+      <div id="detailsModalBody"></div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: PURCHASE / BUY NOW APPLICATION -->
+  <div id="purchaseModal" class="modal">
+    <div class="modal-backdrop" onclick="closeModal('purchaseModal')"></div>
+    <div class="modal-content glass-card">
+      <button class="modal-close" onclick="closeModal('purchaseModal')">&times;</button>
+      <h3 class="modal-title" data-i18n="purchaseTitle">Avtomobil Xaridi Uchun Ariza</h3>
+      <p class="modal-sub" data-i18n="purchaseSub">Ma'lumotlaringizni to'ldiring, menejerimiz siz bilan bog'lanadi.</p>
+
+      <form id="purchaseForm">
+        <div class="form-grid">
+          <div class="control-group">
+            <label data-i18n="fullName">To'liq ism *</label>
+            <input type="text" id="purName" class="input-field" required placeholder="Ism Familiya" />
+          </div>
+          <div class="control-group">
+            <label data-i18n="phone">Telefon raqam *</label>
+            <input type="tel" id="purPhone" class="input-field" required placeholder="+998 90 000 00 00" />
+          </div>
+          <div class="control-group">
+            <label data-i18n="selectedModel">Tanlangan 2026 BMW modeli</label>
+            <input type="text" id="purModel" class="input-field" readonly />
+          </div>
+          <div class="control-group">
+            <label data-i18n="vehiclePrice">Avtomobil narxi (Demo UZS)</label>
+            <input type="text" id="purPrice" class="input-field" readonly />
+          </div>
+          <div class="control-group">
+            <label data-i18n="paymentMethod">To'lov turi</label>
+            <select id="purMethod" class="input-field">
+              <option value="Uzum Bank Credit">Uzum Bank Avtokredit</option>
+              <option value="Bank Installment">Tijorat banki krediti</option>
+              <option value="0% Installment">Bo'lib to'lash (Rassrochka)</option>
+              <option value="Cash / Transfer">100% Naqd / Bank o'tkazmasi</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label data-i18n="downPayment">Boshlang'ich to'lov (UZS)</label>
+            <input type="text" id="purDown" class="input-field" placeholder="300 000 000 UZS" />
+          </div>
+          <div class="control-group">
+            <label data-i18n="preferredBank">Afzal ko'rilgan bank</label>
+            <select id="purBank" class="input-field">
+              <option value="Uzum Bank">Uzum Bank</option>
+              <option value="Kapitalbank">Kapitalbank</option>
+              <option value="Ipak Yo'li Banki">Ipak Yo'li Banki</option>
+              <option value="NBU">O'zmilliybank (NBU)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label data-i18n="contactTime">Bog'lanish uchun qulay vaqt</label>
+            <select id="purTime" class="input-field">
+              <option value="09:00 - 12:00">09:00 – 12:00</option>
+              <option value="12:00 - 15:00">12:00 – 15:00</option>
+              <option value="15:00 - 18:00">15:00 – 18:00</option>
+              <option value="18:00 - 20:00">18:00 – 20:00</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary full-width" data-i18n="submitApp">Arizani yuborish</button>
+      </form>
+      <div id="purchaseSuccess" class="success-box hidden"></div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: UZUM BANK FINANCING -->
+  <div id="uzumModal" class="modal">
+    <div class="modal-backdrop" onclick="closeModal('uzumModal')"></div>
+    <div class="modal-content glass-card">
+      <button class="modal-close" onclick="closeModal('uzumModal')">&times;</button>
+      <div class="uzum-badge"><span class="uzum-dot"></span> UZUM BANK AUTO FINANCING (2026 DEMO)</div>
+      <h3 class="modal-title" data-i18n="uzumModalTitle">Uzum Bank Avtokredit Arizasi</h3>
+      <form id="uzumForm">
+        <div class="control-group">
+          <label data-i18n="fullName">To'liq ism (Pasport bo'yicha) *</label>
+          <input type="text" id="uzumName" class="input-field" required placeholder="Alisher Valiyev" />
+        </div>
+        <div class="control-group">
+          <label data-i18n="phone">Uzum Bankga ulangan telefon raqam *</label>
+          <input type="tel" id="uzumPhone" class="input-field" required placeholder="+998 90 123 45 67" />
+        </div>
+        <div class="control-group">
+          <label data-i18n="selectModel">2026 BMW modeli</label>
+          <select id="uzumModelSelect" class="input-field"></select>
+        </div>
+        <div class="control-group">
+          <label data-i18n="finDuration">Kredit muddati</label>
+          <select id="uzumMonths" class="input-field">
+            <option value="12">12 oy</option>
+            <option value="24">24 oy</option>
+            <option value="36" selected>36 oy</option>
+            <option value="48">48 oy</option>
+            <option value="60">60 oy</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-uzum full-width" data-i18n="submitUzum">Uzum Bank orqali tasdiqlash</button>
+      </form>
+      <div id="uzumSuccess" class="success-box hidden"></div>
+    </div>
+  </div>
+
+  <script src="./INDEX.JS"></script>
+</body>
+</html>
